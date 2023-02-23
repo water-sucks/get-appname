@@ -82,7 +82,7 @@ int main(int argc, char **argv) {
   auto filename = get_app_info_by_name(std::string(argv[1]));
   GDesktopAppInfo *tmp_info = g_desktop_app_info_new(filename.c_str());
   if (tmp_info == NULL) {
-    std::cerr << "error: desktop file with app id not found\n";
+    std::cerr << "error: desktop file with app id " << argv[1] << " not found\n";
     return 1;
   } else {
     std::cout << g_desktop_app_info_get_string(tmp_info, "Name") << "\n";
